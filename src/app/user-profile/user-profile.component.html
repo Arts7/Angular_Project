@@ -1,0 +1,7 @@
+<p><img [src]="User.photo" alt="photo"/></p>
+<p>Name: {{User.name}}</p>
+<p>FirstName: {{User.firstName}}</p>
+<p [style.visibility]="label"> Age:{{User.age}}</p>
+<p>{{User.quote}}</p>
+<h2><input [(ngModel)]="User.quote" placeholder="write your quote"/></h2>
+<button mat-button (click)="onClickButton()">Show my age</button>
