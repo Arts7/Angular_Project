@@ -9,6 +9,7 @@ import { AppComponent } from './app.component';
 import { IdCardComponent } from './id-card/id-card.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
+import { HighlightDirective } from './highlight.directive';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
     IdCardComponent,
     SignUpComponent,
     UserProfileComponent,
+    HighlightDirective,
   ],
   imports: [
     FormsModule,
