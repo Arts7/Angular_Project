@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { user } from '../user';
 
+
 @Component({
   selector: 'app-user-profile',
   templateUrl: './user-profile.component.html',
@@ -10,6 +11,8 @@ export class UserProfileComponent implements OnInit {
 @Input() label:string = "hidden";
 @Output() onClick = new EventEmitter<string>();
   
+
+
 User:user = {
     name: 'Doe',
     firstName : 'John',
@@ -27,6 +30,8 @@ onClickButton() {
   }
   this.onClick.emit(this.label);
 }
+
+
 
   constructor() { this.User.photo = 'https://randomuser.me/api/portraits/lego/2.jpg' }
 
