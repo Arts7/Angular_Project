@@ -12,6 +12,8 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
 import { HighlightDirective } from './highlight.directive';
 import { MenuComponent } from './menu/menu.component';
 import { ROUTES } from './app.route';
+import { DeveloperComponent } from './developer/developer.component';
+import { SkillComponent } from './skill/skill.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +23,8 @@ import { ROUTES } from './app.route';
     UserProfileComponent,
     HighlightDirective,
     MenuComponent,
+    DeveloperComponent,
+    SkillComponent,
   ],
   imports: [
     FormsModule,
