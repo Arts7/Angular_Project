@@ -1,0 +1,52 @@
+<form (ngSubmit)="myForm.valid && onSubmit()" class="container" [formGroup]="filmForm" #myForm="ngForm">
+  <div class="row">
+    <div class="offset-5 col-2">
+
+      <div *ngIf="displayDiagnostic">
+        Form submitted ? {{myForm.submitted}}
+        Form valid ? {{myForm.valid}}
+        Form invalid ? {{myForm.invalid}}
+      </div>
+      <div formGroupName="FilmIdOrTitle">
+        <label for="FilmIdOrTitle-id">Identifiant: <br/>
+          <input name="FilmIdOrTitle-id" type="number" formControlName="Identifiant" />
+        </label>
+        <br/>
+        <label for="FilmIdOrTitle-title">Titre: <br/>
+          <input name="FilmIdOrTitle-title" type="text" formControlName="Titre" />
+        </label>
+        <div *ngIf="filmForm.controls.FilmIdOrTitle.errors && myForm.submitted">
+          <span *ngIf="filmForm.controls.FilmIdOrTitle.errors.isRequired">L'un de deux champs 'Identifiant'
+            ou 'Titre' doit être renseigné</span>
+        </div>
+      </div>
+      <div>
+        <label for="type-film">Type: <br/>
+          <select name="type-film" formControlName="Type">
+            <option value="film">film</option>
+            <option value="serie">série</option>
+            <option value="episode">épisode</option>
+          </select>
+        </label>
+      </div>
+      <div>
+        <label for="annee-film">Année de sortie: <br/>
+          <input name="annee-film" type="number" formControlName="AnneeDeSortie" />
+        </label>
+        <div *ngIf="filmForm.controls.AnneeDeSortie.errors && myForm.submitted">
+          <span *ngIf="filmForm.controls.AnneeDeSortie.errors.min">L'année doit être comprise entre {{minimumYear}} et
+            {{maximumYear}}</span>
+        </div>
+      </div>
+      <div>
+        <label for="fiche-film">Fiche : <br/>
+          <select name="fiche-film" formControlName="Fiche">
+            <option value="complete">Complète</option>
+            <option value="courte">Courte</option>
+          </select>
+        </label>
+      </div>
+      <button type="submit">Lancer une recherche</button>
+    </div>
+  </div>
+</form>

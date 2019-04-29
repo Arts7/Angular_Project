@@ -1,7 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { RouterModule } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
+import { ReactiveFormsModule } from "@angular/forms";
+import { HttpClientModule } from "@angular/common/http";
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -14,6 +16,7 @@ import { MenuComponent } from './menu/menu.component';
 import { ROUTES } from './app.route';
 import { DeveloperComponent } from './developer/developer.component';
 import { SkillComponent } from './skill/skill.component';
+import { SearchMovieComponent } from './search-movie/search-movie.component';
 
 @NgModule({
   declarations: [
@@ -25,11 +28,13 @@ import { SkillComponent } from './skill/skill.component';
     MenuComponent,
     DeveloperComponent,
     SkillComponent,
+    SearchMovieComponent,
   ],
   imports: [
-    FormsModule,
     BrowserModule,
-    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule,
     RouterModule.forRoot(ROUTES)
   ],
   providers: [],
